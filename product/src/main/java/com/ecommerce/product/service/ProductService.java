@@ -2,11 +2,14 @@ package com.ecommerce.product.service;
 
 import com.ecommerce.product.dto.ProductRequest;
 import com.ecommerce.product.dto.ProductResponse;
+import com.ecommerce.product.exception.ProductNotFoundException;
 import com.ecommerce.product.model.Product;
 import com.ecommerce.product.reporsitory.ProductRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,7 +31,7 @@ public class ProductService {
     public ProductResponse updateProduct(Long productId, ProductRequest productRequest) {
 
         Product product = productRepo.findById(productId)
-                .orElseThrow(() -> new RuntimeException("Product not found with id: " + productId));
+                .orElseThrow(() -> new ProductNotFoundException("Product not found with id: " + productId));
 
         maptoProduct(product, productRequest);
 
@@ -99,15 +102,25 @@ public class ProductService {
     }
 
     public String deleteProductsById(Long productId) {
-        Product product = productRepo.findById(productId).orElseThrow(() -> new RuntimeException("No Product Available with this ProductId " + productId));
+        Product product = productRepo.findById(productId)
+                .orElseThrow(() -> new ProductNotFoundException("No Product Available with this ProductId " + productId));
         product.setActive(false);
         productRepo.save(product);
-        return "Product Set to false "+productId;
+        return "Product Set to false " + productId;
     }
 
     public List<ProductResponse> searchProducts(String keyword) {
-    return productRepo.searchProducts(keyword)
-            .stream().map(this::mapToProductResponse)
-        .collect(Collectors.toList());
+        return productRepo.searchProducts(keyword)
+                .stream().map(this::mapToProductResponse)
+                .collect(Collectors.toList());
+    }
+
+    public ProductResponse getProductById(Long productId) {
+        Product product = productRepo.findByProductIdAndActiveTrue(productId)
+                .orElseThrow(() -> new ProductNotFoundException(
+                        "Product not found with id: " + productId
+                ));
+
+        return mapToProductResponse(product);
     }
 }

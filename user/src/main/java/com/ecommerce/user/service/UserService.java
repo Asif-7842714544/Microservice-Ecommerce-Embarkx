@@ -1,5 +1,6 @@
 package com.ecommerce.user.service;
 
+import com.ecommerce.user.exception.UserNotFoundException;
 import com.ecommerce.user.model.User;
 import com.ecommerce.user.dto.AddressDto;
 import com.ecommerce.user.dto.UserRequest;
@@ -28,13 +29,13 @@ public class UserService {
     }
 
     public UserResponse getUserbyId(Long userId) {
-        User user = userRepo.findById(userId).orElseThrow(() -> new RuntimeException("user not found with userId " + userId));
+        User user = userRepo.findById(userId).orElseThrow(() -> new UserNotFoundException("user not found with userId " + userId));
         return mapToUserResponse(user);
     }
 
     public User updateUser(Long userId, UserRequest updateUser) {
         User existingUser = userRepo.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found with userId " + userId));
+                .orElseThrow(() -> new UserNotFoundException("User not found with userId " + userId));
 
         if (updateUser.getFirstName() != null) existingUser.setFirstName(updateUser.getFirstName());
         if (updateUser.getLastName() != null) existingUser.setLastName(updateUser.getLastName());
