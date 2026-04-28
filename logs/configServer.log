@@ -1,0 +1,100 @@
+2026-04-28T19:28:51.021+05:30  INFO 22648 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 22648 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T19:28:51.027+05:30  INFO 22648 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T19:28:53.077+05:30  INFO 22648 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T19:28:54.424+05:30  INFO 22648 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T19:28:54.485+05:30  INFO 22648 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T19:28:54.486+05:30  INFO 22648 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T19:28:54.751+05:30  INFO 22648 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3571 ms
+2026-04-28T19:28:57.225+05:30  INFO 22648 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T19:28:57.270+05:30  INFO 22648 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 8.513 seconds (process running for 10.127)
+2026-04-28T19:29:00.780+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T19:29:00.782+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T19:29:00.787+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-28T19:29:01.062+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:29:08.927+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:29:17.716+05:30  INFO 22648 --- [configServer] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:30:41.033+05:30  INFO 22648 --- [configServer] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-28T19:30:41.091+05:30  INFO 22648 --- [configServer] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-28T19:30:48.607+05:30  INFO 13684 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 13684 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T19:30:48.613+05:30  INFO 13684 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T19:30:50.752+05:30  INFO 13684 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T19:30:51.810+05:30  INFO 13684 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T19:30:51.862+05:30  INFO 13684 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T19:30:51.864+05:30  INFO 13684 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T19:30:52.062+05:30  INFO 13684 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3303 ms
+2026-04-28T19:30:54.716+05:30  INFO 13684 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T19:30:54.767+05:30  INFO 13684 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 8.034 seconds (process running for 10.435)
+2026-04-28T19:30:57.858+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T19:30:57.860+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T19:30:57.864+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-28T19:30:58.091+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:31:07.493+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:31:15.525+05:30  INFO 13684 --- [configServer] [http-nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:31:50.188+05:30  INFO 13684 --- [configServer] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-28T19:31:50.235+05:30  INFO 13684 --- [configServer] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-28T19:31:58.316+05:30  INFO 14188 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 14188 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T19:31:58.324+05:30  INFO 14188 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T19:32:00.620+05:30  INFO 14188 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T19:32:01.490+05:30  INFO 14188 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T19:32:01.519+05:30  INFO 14188 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T19:32:01.520+05:30  INFO 14188 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T19:32:01.724+05:30  INFO 14188 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3202 ms
+2026-04-28T19:32:04.264+05:30  INFO 14188 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T19:32:04.325+05:30  INFO 14188 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 8.12 seconds (process running for 9.743)
+2026-04-28T19:32:09.016+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T19:32:09.018+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T19:32:09.023+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-28T19:32:09.256+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:32:16.882+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T19:32:28.597+05:30  INFO 14188 --- [configServer] [http-nio-8888-exec-6] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:06:50.230+05:30  INFO 22368 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 22368 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T23:06:50.236+05:30  INFO 22368 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T23:06:52.778+05:30  INFO 22368 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T23:06:53.908+05:30  INFO 22368 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T23:06:53.941+05:30  INFO 22368 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T23:06:53.942+05:30  INFO 22368 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T23:06:54.196+05:30  INFO 22368 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3781 ms
+2026-04-28T23:06:56.995+05:30  INFO 22368 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T23:06:57.032+05:30  INFO 22368 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 8.499 seconds (process running for 10.954)
+2026-04-28T23:06:59.145+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T23:06:59.146+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T23:06:59.150+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-04-28T23:06:59.316+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:07:23.830+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:07:38.424+05:30  INFO 22368 --- [configServer] [http-nio-8888-exec-3] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:35:13.378+05:30  INFO 22368 --- [configServer] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-28T23:35:14.086+05:30  INFO 22368 --- [configServer] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-28T23:36:09.175+05:30  INFO 8996 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 8996 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T23:36:09.183+05:30  INFO 8996 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T23:36:14.040+05:30  INFO 8996 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T23:36:15.326+05:30  INFO 8996 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T23:36:15.404+05:30  INFO 8996 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T23:36:15.408+05:30  INFO 8996 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T23:36:15.775+05:30  INFO 8996 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 6177 ms
+2026-04-28T23:36:19.827+05:30  INFO 8996 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T23:36:19.901+05:30  INFO 8996 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 15.144 seconds (process running for 21.747)
+2026-04-28T23:36:57.981+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T23:36:57.987+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T23:36:58.003+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2026-04-28T23:36:58.375+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:37:39.594+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:38:12.854+05:30  INFO 8996 --- [configServer] [http-nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:41:23.722+05:30  INFO 8996 --- [configServer] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-28T23:41:23.810+05:30  INFO 8996 --- [configServer] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-28T23:41:45.780+05:30  INFO 3488 --- [configServer] [main] c.c.c.ConfigServerApplication            : Starting ConfigServerApplication using Java 21.0.3 with PID 3488 (C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx\configServer\target\classes started by casif in C:\Users\casif\OneDrive\Desktop\Asif\UdemyEmbarkx\New\Observability&Tracing\Microservice-Ecommerce-Embarkx)
+2026-04-28T23:41:45.787+05:30  INFO 3488 --- [configServer] [main] c.c.c.ConfigServerApplication            : The following 1 profile is active: "native"
+2026-04-28T23:41:49.297+05:30  INFO 3488 --- [configServer] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e10eddb2-ee4d-3c8f-bb0e-bba3ea49171c
+2026-04-28T23:41:50.347+05:30  INFO 3488 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8888 (http)
+2026-04-28T23:41:50.407+05:30  INFO 3488 --- [configServer] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-28T23:41:50.408+05:30  INFO 3488 --- [configServer] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-04-28T23:41:50.716+05:30  INFO 3488 --- [configServer] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 4530 ms
+2026-04-28T23:41:54.319+05:30  INFO 3488 --- [configServer] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8888 (http) with context path '/'
+2026-04-28T23:41:54.382+05:30  INFO 3488 --- [configServer] [main] c.c.c.ConfigServerApplication            : Started ConfigServerApplication in 10.757 seconds (process running for 14.608)
+2026-04-28T23:41:58.310+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-28T23:41:58.311+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-28T23:41:58.315+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-28T23:41:58.606+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-1] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/user-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:42:20.562+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-2] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/product-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:42:37.027+05:30  INFO 3488 --- [configServer] [http-nio-8888-exec-4] o.s.c.c.s.e.NativeEnvironmentRepository  : Adding property source: Config resource 'class path resource [config/order-service.yml]' via location 'optional:classpath:/config/'
+2026-04-28T23:55:32.441+05:30  INFO 3488 --- [configServer] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-28T23:55:32.570+05:30  INFO 3488 --- [configServer] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
