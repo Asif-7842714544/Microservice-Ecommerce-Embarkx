@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/api/users/{userId}")
-    public UserResponse getAllUsers(@PathVariable Long userId)
+    public UserResponse getUserById(@PathVariable Long userId)
     {
         return userService.getUserbyId(userId);
    }
