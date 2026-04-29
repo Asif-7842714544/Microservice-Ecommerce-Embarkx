@@ -23,7 +23,7 @@ public class User {
     private String phone;
     private UserRole role=UserRole.CUSTOMER;
 
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id",referencedColumnName = "addressId")
     private Address address;
 
