@@ -2,7 +2,6 @@ package com.ecommerce.user.service;
 
 import com.ecommerce.user.exception.UserNotFoundException;
 import com.ecommerce.user.model.User;
-import com.ecommerce.user.dto.AddressDto;
 import com.ecommerce.user.dto.UserRequest;
 import com.ecommerce.user.dto.UserResponse;
 import com.ecommerce.user.reporsitory.UserRepo;
@@ -66,17 +65,17 @@ public class UserService {
                 .userId(String.valueOf(user.getUserId()))
                 .role(user.getRole());
 
-        if (user.getAddress() != null) {
-            builder.address(
-                    AddressDto.builder()
-                            .street(user.getAddress().getStreet())
-                            .city(user.getAddress().getCity())
-                            .state(user.getAddress().getState())
-                            .country(user.getAddress().getCountry())
-                            .zipCode(user.getAddress().getZipCode())
-                            .build()
-            );
-        }
+//        if (user.getAddress() != null) {
+//            builder.address(
+//                    AddressDto.builder()
+//                            .street(user.getAddress().getStreet())
+//                            .city(user.getAddress().getCity())
+//                            .state(user.getAddress().getState())
+//                            .country(user.getAddress().getCountry())
+//                            .zipCode(user.getAddress().getZipCode())
+//                            .build()
+//            );
+//        }
 
         return builder.build();
     }

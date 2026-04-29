@@ -1,7 +1,6 @@
 package com.ecommerce.order.service;
 
 import com.ecommerce.order.client.ProductClient;
-import com.ecommerce.order.client.ProductServiceClient;
 import com.ecommerce.order.client.UserClient;
 import com.ecommerce.order.dto.CartItemRequest;
 import com.ecommerce.order.dto.ProductResponse;
@@ -11,7 +10,6 @@ import com.ecommerce.order.reporsitory.CartRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClient;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -33,7 +31,7 @@ public class CartService {
         // Retrieve the product
         ProductResponse product = productClient.getProductById(request.getProductId());
 
-        log.info("product {}", product);
+        log.info("product {}", product.getProductId());
 
 //        // Check if sufficient stock is available
         if (product.getStockQuantity() < request.getQuantity()) {
@@ -42,7 +40,7 @@ public class CartService {
 
 
 //        // Retrieve the user
-        UserResponse userResponse = userClient.getUserById(Long.valueOf(userId));
+        UserResponse userResponse = userClient.getUserById(userId);
 
         // Check if the item already exists in the cart
         CartItem existingCartItem = cartRepo.findByUserIdAndProductId(Long.valueOf(userResponse.getUserId()), product.getProductId());
