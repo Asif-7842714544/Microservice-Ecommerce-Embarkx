@@ -216,3 +216,11 @@ services:
     command: -f json -d 200ms -l
     networks:
       - loki
+
+  zipkin:
+    image: ghcr.io/openzipkin/zipkin-slim:${TAG:-latest}
+    container_name: zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - loki

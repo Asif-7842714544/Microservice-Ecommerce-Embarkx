@@ -24,9 +24,15 @@ eureka:
 logging:
   file:
     name: logs/${spring.application.name}.log
+
   level:
     root: INFO
-    com.ecommerce.product: DEBUG
+    com.ecommerce.order: DEBUG
+
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}] %logger{36} - %msg%n"
+
   logback:
     rollingpolicy:
       max-file-size: 10MB
@@ -38,3 +44,6 @@ management:
     web:
       exposure:
         include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
