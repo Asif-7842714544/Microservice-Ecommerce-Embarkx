@@ -1,5 +1,5 @@
 package com.ecommerce.order.model;
 
 public enum UserRole {
-    CUSTOMER,ADMIN,USER
+    CUSTOMER, ADMIN, USER
 }

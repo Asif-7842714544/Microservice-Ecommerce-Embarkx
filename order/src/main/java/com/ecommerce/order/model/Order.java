@@ -22,9 +22,9 @@ public class Order {
     private Long userId;
     private BigDecimal totalAmount;
     @Enumerated(EnumType.STRING)
-    private OrderStatus orderStatus=OrderStatus.PENDING;
+    private OrderStatus orderStatus = OrderStatus.PENDING;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<OrderItem> items=new ArrayList<>();
+    private List<OrderItem> items = new ArrayList<>();
 
     @CreationTimestamp
     private LocalDateTime createdAt;

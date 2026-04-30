@@ -18,37 +18,37 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping
-    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest productRequest){
-        return new ResponseEntity<ProductResponse>(productService.createProduct(productRequest),HttpStatus.CREATED);
+    public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest productRequest) {
+        return new ResponseEntity<>(productService.createProduct(productRequest), HttpStatus.CREATED);
 
     }
 
     @GetMapping("/{productId}")
-    public ResponseEntity<ProductResponse> getProductById(@PathVariable Long productId){
+    public ResponseEntity<ProductResponse> getProductById(@PathVariable Long productId) {
         return ResponseEntity.ok(productService.getProductById(productId));
     }
 
     @PutMapping("/{productId}")
-    public ResponseEntity<ProductResponse> updateProduct(@PathVariable Long productId,@RequestBody ProductRequest productRequest){
-        return new ResponseEntity<ProductResponse>(productService.updateProduct(productId,productRequest),HttpStatus.OK);
+    public ResponseEntity<ProductResponse> updateProduct(@PathVariable Long productId, @RequestBody ProductRequest productRequest) {
+        return new ResponseEntity<>(productService.updateProduct(productId, productRequest), HttpStatus.OK);
 
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> getAllProducts(){
-        return new ResponseEntity<List<ProductResponse>>(productService.fetchAllProducts(),HttpStatus.OK);
+    public ResponseEntity<List<ProductResponse>> getAllProducts() {
+        return new ResponseEntity<>(productService.fetchAllProducts(), HttpStatus.OK);
 
     }
 
 
     @DeleteMapping("/{productId}")
-    public ResponseEntity<String> deleteProductsById(@PathVariable Long productId){
-        return new ResponseEntity<String>(productService.deleteProductsById(productId),HttpStatus.OK);
+    public ResponseEntity<String> deleteProductsById(@PathVariable Long productId) {
+        return new ResponseEntity<>(productService.deleteProductsById(productId), HttpStatus.OK);
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<ProductResponse>> searchProducts(@RequestParam String keyword){
-        return new ResponseEntity<List<ProductResponse>>(productService.searchProducts(keyword),HttpStatus.OK);
+    public ResponseEntity<List<ProductResponse>> searchProducts(@RequestParam String keyword) {
+        return new ResponseEntity<>(productService.searchProducts(keyword), HttpStatus.OK);
     }
 
 }

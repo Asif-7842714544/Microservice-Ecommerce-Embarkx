@@ -19,30 +19,27 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping()
-    public ResponseEntity<List<UserResponse>> getAllUsers()
-    {
-        
-       return  ResponseEntity.ok(userService.fetchAllUsers());
+    public ResponseEntity<List<UserResponse>> getAllUsers() {
+
+        return ResponseEntity.ok(userService.fetchAllUsers());
     }
 
     @PostMapping()
-    public ResponseEntity<UserResponse> createUser(@RequestBody User user)
-    {
+    public ResponseEntity<UserResponse> createUser(@RequestBody User user) {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(userService.addUser(user));
     }
 
     @GetMapping("/{userId}")
-    public UserResponse getUserById(@PathVariable Long userId)
-    {
+    public UserResponse getUserById(@PathVariable Long userId) {
         return userService.getUserbyId(userId);
-   }
+    }
 
-   @PutMapping("/{userId}")
-   public ResponseEntity<User> updateUser(@PathVariable Long userId,@RequestBody UserRequest user){
-        return ResponseEntity.ok(userService.updateUser(userId,user));
-   }
+    @PutMapping("/{userId}")
+    public ResponseEntity<User> updateUser(@PathVariable Long userId, @RequestBody UserRequest user) {
+        return ResponseEntity.ok(userService.updateUser(userId, user));
+    }
 
 
 }
