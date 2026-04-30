@@ -63,6 +63,7 @@ public class CartService {
                     .multiply(BigDecimal.valueOf(request.getQuantity())));
             cartRepo.save(cartItem);
         }
+        log.info("added to cart successfully");
         return true;
     }
 
