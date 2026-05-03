@@ -49,7 +49,7 @@ services:
       - ./logging/alloy-local-config.yaml:/etc/alloy/config.alloy:ro
       - /var/run/docker.sock:/var/run/docker.sock
       - ../../logs:/logs-parent:ro
-    command:  run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
+    command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
     ports:
       - 12345:12345
     depends_on:
@@ -143,7 +143,7 @@ services:
       - gateway
     networks:
       - loki
-    
+
 
   gateway:
     image: nginx:latest
@@ -207,7 +207,7 @@ services:
     ports:
       - "3100:3100"
     healthcheck:
-      test: ["CMD", "service", "nginx", "status"]
+      test: [ "CMD", "service", "nginx", "status" ]
       interval: 10s
       timeout: 5s
       retries: 5

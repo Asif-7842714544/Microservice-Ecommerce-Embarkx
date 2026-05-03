@@ -151,7 +151,7 @@ services:
         EOF
         /docker-entrypoint.sh nginx -g "daemon off;"
     healthcheck:
-      test: ["CMD", "service", "nginx", "status"]
+      test: [ "CMD", "service", "nginx", "status" ]
     networks:
       - loki
 

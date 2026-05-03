@@ -7,6 +7,8 @@ import com.ecommerce.order.dto.ProductResponse;
 import com.ecommerce.order.dto.UserResponse;
 import com.ecommerce.order.model.CartItem;
 import com.ecommerce.order.reporsitory.CartRepo;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Slf4j
+@Transactional
 public class CartService {
 
     private final CartRepo cartRepo;
@@ -25,6 +28,7 @@ public class CartService {
     private final UserClient userClient;
 
 
+    @CircuitBreaker(name = "productService",fallbackMethod = "addToCartFallBack")
     public boolean addToCart(Long userId, CartItemRequest request) {
         log.info("inside addtoCart method with UserId  {} and productId {}", userId, request.getProductId());
 
@@ -37,7 +41,6 @@ public class CartService {
         if (product.getStockQuantity() < request.getQuantity()) {
             throw new RuntimeException("Insufficient stock for the product");
         }
-
 
 //        // Retrieve the user
         UserResponse userResponse = userClient.getUserById(userId);
@@ -85,5 +88,13 @@ public class CartService {
     public void clearCart(String userId) {
         cartRepo.deleteAllByUserId(userId);
 
+    }
+
+
+    public boolean addToCartFallBack(Long userId,
+                                    CartItemRequest request,
+                                    Exception exception){
+       log.info("fallback msg {}",exception.getMessage());
+        return false;
     }
 }

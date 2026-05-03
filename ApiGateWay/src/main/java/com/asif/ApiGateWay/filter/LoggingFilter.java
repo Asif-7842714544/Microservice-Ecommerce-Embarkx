@@ -1,4 +1,4 @@
-package com.asif.ApiGateWay;
+package com.asif.ApiGateWay.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,11 +12,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class LoggingFilter implements GlobalFilter {
 
-    private final Logger log= LoggerFactory.getLogger(LoggingFilter.class);
+    private final Logger log = LoggerFactory.getLogger(LoggingFilter.class);
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("Incoming request to: {} ",exchange.getRequest().getPath());
+        log.info("Incoming request to: {} ", exchange.getRequest().getPath());
         return chain.filter(exchange);
     }
 }

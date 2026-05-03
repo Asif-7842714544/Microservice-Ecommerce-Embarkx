@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CartRepo extends JpaRepository<CartItem,Long> {
+public interface CartRepo extends JpaRepository<CartItem, Long> {
     CartItem findByUserIdAndProductId(Long userId, Long productId);
 
     List<CartItem> findByUserId(Long userId);

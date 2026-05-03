@@ -24,7 +24,8 @@ public class FeignErrorDecoder implements ErrorDecoder {
             );
 
             Map<String, Object> error =
-                    mapper.readValue(body, new TypeReference<>() {});
+                    mapper.readValue(body, new TypeReference<>() {
+                    });
 
             String message = (String) error.get("message");
 
