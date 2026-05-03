@@ -24,7 +24,7 @@ public class CartController {
             @RequestBody CartItemRequest request
     ) {
         if (!cartService.addToCart(userId, request)) {
-            return ResponseEntity.badRequest().body("Failed to add item to cart. Please check the product ID and quantity.");
+            return ResponseEntity.badRequest().body("Failed to add item to cart. Please check the product Service and UserService OR Product quantity.");
         }
         return ResponseEntity.accepted().body("Item added to cart successfully.");
     }
