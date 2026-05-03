@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: notification
+  rabbitmq:
+    host: localhost   # use 'rabbitmq' if running inside docker network
+    port: 5672
+    username: admin
+    password: admin123
+
+server:
+  port: 8084
+
+# ✅ Custom RabbitMQ properties (used in your @Value)
+rabbitmq:
+  exchange:
+    name: order.exchange
+  queue:
+    name: order.queue
+  routing:
+    key: order.tracking
