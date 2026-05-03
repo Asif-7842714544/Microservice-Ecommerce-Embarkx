@@ -1,8 +1,16 @@
 server:
   port: 8081
+
 spring:
   application:
     name: order-service
+
+  rabbitmq:
+    host: localhost   # use 'rabbitmq' if running inside docker network
+    port: 5672
+    username: admin
+    password: admin123
+
   datasource:
     url: jdbc:mysql://localhost:3306/ecomnew?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
@@ -14,11 +22,21 @@ spring:
       ddl-auto: update
     show-sql: true
 
+# ✅ Custom RabbitMQ properties (used in your @Value)
+rabbitmq:
+  exchange:
+    name: order.exchange
+  queue:
+    name: order.queue
+  routing:
+    key: order.tracking
+
 eureka:
   instance:
     ip-address: 127.0.0.1
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
@@ -32,6 +50,7 @@ logging:
   level:
     root: INFO
     com.ecommerce.order: DEBUG
+    org.springframework.amqp: DEBUG   # 🔥 helps debug RabbitMQ connection
 
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
@@ -43,25 +62,25 @@ logging:
       max-history: 7
       total-size-cap: 100MB
 
-
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
   endpoint:
     health:
       show-details: always
+
   health:
     circuitbreakers:
       enabled: true
+
   tracing:
     sampling:
       probability: 1.0
 
-
-#circuitbreaker
-
+# Circuit Breaker
 resilience4j:
   circuitbreaker:
     instances:
