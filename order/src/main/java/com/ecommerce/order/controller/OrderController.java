@@ -3,6 +3,7 @@ package com.ecommerce.order.controller;
 import com.ecommerce.order.dto.OrderResponse;
 import com.ecommerce.order.service.OrderService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
+@Slf4j
 public class OrderController {
 
     private final OrderService orderService;
 
     @PostMapping
     public ResponseEntity<OrderResponse> creatOrder(@RequestHeader("X-user-id") Long userId) {
-
+        log.info("Inside CreaOrder Controller");
         OrderResponse order = orderService.createOrder(userId);
         return new ResponseEntity<>(order, HttpStatus.CREATED);
     }

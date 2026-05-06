@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/serviceDiscovery/pom.xml" />
         <option value="$PROJECT_DIR$/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/ApiGateWay/pom.xml" />
+        <option value="$PROJECT_DIR$/notification/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
