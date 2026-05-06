@@ -1,6 +1,26 @@
 spring:
   application:
     name: notification
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    topic:
+      order-events: order-Topic   # Kafka topic name
+
+    consumer:
+      group-id: my-new-group-rider
+      key-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+
+      properties:
+        spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.ecommerce.notification.payLoad.OrderEvent
+
+
   rabbitmq:
     host: localhost   # use 'rabbitmq' if running inside docker network
     port: 5672
@@ -8,7 +28,10 @@ spring:
     password: admin123
 
 server:
-  port: 8084
+  port: 8086
+
+
+
 
 # ✅ Custom RabbitMQ properties (used in your @Value)
 rabbitmq:
@@ -18,3 +41,4 @@ rabbitmq:
     name: order.queue
   routing:
     key: order.tracking
+

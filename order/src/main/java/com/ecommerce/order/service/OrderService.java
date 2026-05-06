@@ -10,8 +10,10 @@ import com.ecommerce.order.model.OrderItem;
 import com.ecommerce.order.model.OrderStatus;
 import com.ecommerce.order.reporsitory.OrderRepo;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,18 +22,25 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class OrderService {
 
-    @Value("${rabbitmq.exchange.name}")
-    private String exchangeName;
+//    @Value("${rabbitmq.exchange.name}")
+//    private String exchangeName;
+//
+//    @Value("${rabbitmq.routing.key}")
+//    private String routingKey;
 
-    @Value("${rabbitmq.routing.key}")
-    private String routingKey;
+    @Value("${spring.kafka.topic.order-events}")
+    private String topicName;
 
 
     private final CartService cartService;
     private final OrderRepo orderRepo;
-    private final RabbitTemplate rabbitTemplate;
+//    private final RabbitTemplate rabbitTemplate;
+
+    private final KafkaTemplate<String, OrderEvent> kafkaTemplate;
+
 
     public OrderResponse createOrder(Long userId) {
         //validate for cart Item
@@ -40,6 +49,7 @@ public class OrderService {
         //validatev for user
 //        User user = userRepo.findById(Long.valueOf(userId))
 //                .orElseThrow(() -> new RuntimeException("User not found with userId " + userId));
+
         //calculate total price
         BigDecimal totalPrice = cartItems.stream()
                 .map(CartItem::getPrice)
@@ -71,7 +81,9 @@ public class OrderService {
                 .createdAt(savedOrder.getCreatedAt())
                 .build();
 
-        rabbitTemplate.convertAndSend(exchangeName, routingKey, orderEvent);
+//        rabbitTemplate.convertAndSend(exchangeName, routingKey, orderEvent);
+        kafkaTemplate.send(topicName, orderEvent);
+        log.info("OrderEvent sent {}", orderEvent.getOrderId());
 
         return Optional.of(maptoOrderResponse(savedOrder))
                 .orElseThrow(() -> new RuntimeException("Failed to create order."));
